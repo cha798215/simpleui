@@ -16,15 +16,15 @@
     <title>{{ site_title }}</title>
 
     {% if "SIMPLEUI_STATIC_OFFLINE"|get_config %}
-        <link rel="stylesheet" href="{% static '/admin/simpleui-x/elementui/theme-chalk/index.css' %}">
-        <link rel="stylesheet" href="{% static '/admin/simpleui-x/fontawesome-free-5.8.1-web/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'admin/simpleui-x/elementui/theme-chalk/index.css' %}">
+        <link rel="stylesheet" href="{% static 'admin/simpleui-x/fontawesome-free-5.8.1-web/css/all.min.css' %}">
     {% else %}
         <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
         <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.1/css/all.min.css">
     {% endif %}
 
-    <link rel="stylesheet" href="{% static '/admin/simpleui-x/css/index.css' %}?_=2.1.4.619">
-    <link rel="stylesheet" href="{% static '/admin/simpleui-x/waves/waves.min.css' %}?_=2.1">
+    <link rel="stylesheet" href="{% static 'admin/simpleui-x/css/index.css' %}?_=2.1.4.619" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'admin/simpleui-x/waves/waves.min.css' %}?_=2.1" rel="stylesheet" type="text/css">
     {% block head %}
 
     {% endblock %}
@@ -68,7 +68,7 @@
                             {% if "SIMPLEUI_LOGO"|get_config %}
                                 <img src="{{ "SIMPLEUI_LOGO"|get_config |safe }}">
                             {% else %}
-                                <img src="{% static '/admin/simpleui-x/img/logo.png' %}">
+                                <img src="{% static 'admin/simpleui-x/img/logo.png' %}">
                             {% endif %}
                         </div>
                         <div class="left">
@@ -190,7 +190,7 @@
                             {% if home %}
                                 <iframe :src="'{{ home }}'"></iframe>
                             {% else %}
-                                {% include './home.html' %}
+                                {% include 'admin/home.html' %}
                             {% endif %}
                         </div>
                         <div v-else class="iframe-wrap">
@@ -280,7 +280,7 @@
         no: '{% trans 'No' %}',
         confirm: '{% trans 'Are you sure?' %}'
     }
-    window.themeUrl = '{% static '/admin/simpleui-x/theme/' %}';
+    window.themeUrl = '{% static 'admin/simpleui-x/theme/' %}';
     window.urls = {
         changePassword: "{% url 'admin:password_change' %}",
         logout: "{% url 'admin:logout' %}"
@@ -296,21 +296,21 @@
 </script>
 
 {% if "SIMPLEUI_STATIC_OFFLINE"|get_config %}
-    <script type="text/javascript" src="{% static '/admin/simpleui-x/js/vue.min.js' %}"></script>
-    <script type="text/javascript" src="{% static '/admin/simpleui-x/elementui/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/simpleui-x/js/vue.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/simpleui-x/elementui/index.js' %}"></script>
 {% else %}
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 {% endif %}
 
-<script type="text/javascript" src="{% static '/admin/simpleui-x/automatic/dicts.js' %}?_=2.1"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/automatic/segment.js' %}"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/locale/en-us.js' %}?_=2.1.2"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/locale/' %}{% get_language %}.js?_=2.1.2" onerror="localeError()"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/js/cookie.js' %}"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/theme/theme.js' %}"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/waves/waves.min.js' %}?_=2.0.5"></script>
-<script type="text/javascript" src="{% static '/admin/simpleui-x/js/index.js' %}?_=2.3"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/automatic/dicts.js' %}?_=2.1"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/automatic/segment.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/locale/en-us.js' %}?_=2.1.2"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/locale/' %}{% get_language %}.js?_=2.1.2" onerror="localeError()"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/js/cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/theme/theme.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/waves/waves.min.js' %}?_=2.0.5"></script>
+<script type="text/javascript" src="{% static 'admin/simpleui-x/js/index.js' %}?_=2.3"></script>
 
 {% load_analysis %}
 {% block script %}
